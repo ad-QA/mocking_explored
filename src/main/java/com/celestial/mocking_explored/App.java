@@ -14,11 +14,17 @@ public class App
     public static void main( String[] args )
     {
         TextFileLoader tfl = new TextFileLoader();
-        Iterable<String> lines = tfl.loadFile("C:\\tmp\\KeyboardHandler.java.txt");
+        String fname = "C:\\tmp\\KeyboardHandler.java.txt";
+        Iterable<String> lines = tfl.loadData(fname);
+
         
         lines.forEach((element) ->{
             System.out.println(element);
         });
+
+        DataLoader dl = new DataLoader(tfl);
+        long noOfChars = dl.loadData(fname);
+        System.out.println("No of Characters in the file: "+noOfChars);
     }
     
 }

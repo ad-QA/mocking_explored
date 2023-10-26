@@ -17,9 +17,9 @@ import java.util.logging.Logger;
  *
  * @author selvy
  */
-public class TextFileLoader
+public class TextFileLoader implements IDataSource
 {
-    public  Iterable<String>  loadFile(  String fname )
+    public  Iterable<String>  loadData(  String fname )
     {
         FileReader fr = null;
         ArrayList<String> lines = new ArrayList<>();
