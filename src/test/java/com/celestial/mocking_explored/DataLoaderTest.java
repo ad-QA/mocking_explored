@@ -240,7 +240,7 @@ public class DataLoaderTest
         // Now mocking the ArrayList
         ArrayList<Integer> m_ints = mock(ArrayList.class);
         when(m_ints.size()).thenReturn(4);
-
+        when(m_ints.isEmpty()).thenReturn(true);
         // We've added no items so isEmpty() should return true
         boolean result = m_ints.isEmpty();
         assertEquals( true, result, "The collection is empty");
@@ -256,7 +256,7 @@ public class DataLoaderTest
         items.add("line 2");
         items.add("line 3");
         
-        when(mock.loadData(any(), any())).thenReturn(items);
+        when(mock.loadData(any())).thenReturn(items);
         
         // Look carefully at how DataLoader.lodData() works, line 
         DataLoader cut = new DataLoader(mock);
